@@ -23,3 +23,31 @@
 > journalctl --since='2024-04-24' --until='2024-04-25'
 > journalctl --since='2024-04-24' --until='2024-04-25' -p err
 
+> journalctl -xau sshd
+
+log to RAM by default
+
+> /var/log/journal/
+
+> /etc/systemd/journald.conf
+
+> storage=auto
+> storage=no
+> storage=persistent # create forder if not exists
+> usermod -a -G adm dpezet
+
+### journald remote logging
+
+> yum install systemd-journal-remote
+
+> /etc/systemd/journal-upload.conf
+
+
+
+
+
+
+
+
+
+
