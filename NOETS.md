@@ -34,6 +34,10 @@ log to RAM by default
 > storage=auto
 > storage=no
 > storage=persistent # create forder if not exists
+
+> ForwardToSyslog=yes
+
+
 > usermod -a -G adm dpezet
 
 ### journald remote logging
@@ -41,6 +45,23 @@ log to RAM by default
 > yum install systemd-journal-remote
 
 > /etc/systemd/journal-upload.conf
+
+## Audit passord
+
+> chage  -l username username
+> chage  -M(max) 90 username
+> chage  -m(min) 1 username
+> chage  -E(expire) 09/22/2027 username
+> chage  -E(expire) 09/22/2027 -W 7 username
+
+> /etc/login.defs
+> /etc/security/pwquality.conf
+
+
+
+
+
+
 
 
 
