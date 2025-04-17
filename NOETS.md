@@ -57,8 +57,13 @@ log to RAM by default
 > /etc/login.defs
 > /etc/security/pwquality.conf
 
+minlen should be minmum credits
 
+> echo -n pass | shar256sum
 
+> john the ripper 
+
+> openwall.com
 
 
 
