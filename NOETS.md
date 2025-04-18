@@ -61,13 +61,32 @@ minlen should be minmum credits
 
 > echo -n pass | shar256sum
 
-> john the ripper 
+
+> john the ripper (TODO)
 
 > openwall.com
 
+###  Audit The Filesystem
+
+> yum install audit
+> systemctl enable --now auditd
 
 
+> /etc/audit/auditd.conf
 
+> max_log_file = 8
+
+> auditctl -s
+> auditctl -l
+> auditctl -w  /filepath -p rwx -k rule_name
+> auditctl -w  /dirpath/ -p w -k rule_name
+
+>
+> /etc/audit/rules.d/audit.rules
+
+>  /var/log/audit/audit.log
+
+> ausearch  -k keyname
 
 
 
