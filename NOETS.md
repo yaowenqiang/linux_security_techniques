@@ -89,7 +89,22 @@ minlen should be minmum credits
 > ausearch  -k keyname
 
 
+### Audit suid and sgid 
 
+```bash
+
+ls -lh /usr/bin/chsh
+-rws--x--x 1 root root 25K May 21  2024 /usr/bin/chsh
+
+
+
+```
+
+
+> -rws
+> -rwS
+
+> chmod u+s filepath
 
 
 
