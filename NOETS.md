@@ -105,6 +105,15 @@ ls -lh /usr/bin/chsh
 > -rwS
 
 > chmod u+s filepath
+> chmod 4777 filepath
+
+
+> chmod g+s filepath
+> chmod 2777 filepath
+
+> find / -perm -u+s
+> --- find / -perm +4000
+
 
 
 
