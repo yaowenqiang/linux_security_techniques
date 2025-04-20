@@ -116,6 +116,53 @@ ls -lh /usr/bin/chsh
 
 
 
+### Failtoban
+
+> FreePBX
+
+> SIP
+
+> yum install fail2ban
+
+> systemctl enable --now fail2ban
+
+> /var/log/fail2ban.log
+
+> fail2ban-client status
+> cd /etc/fail2ban/
+> touch jail.local
+
+```
+[DEFAULT]
+bantime = 3600 #3600 seconds by default
+sender=root@local
+destination=root@local
+action=%(action_)s
+action=%(action_mwl)s
+ignoreip=ip
+[sshd]
+enabled = true
+
+
+> hydra
+
+> hydra -l root -t2 -P /passlist.txt ip ssh
+
+> https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10k-most-common.txt
+
+
+> firewall-cmd --list.all
+
+```
+
+> cd /etc/fail2ban/filter.d
+
+
+
+
+
+
+
 
 
 
