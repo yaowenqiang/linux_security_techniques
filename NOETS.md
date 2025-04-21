@@ -158,6 +158,43 @@ enabled = true
 > cd /etc/fail2ban/filter.d
 
 
+## LUKS disk encryption(TODO)
+
+## Data Encryption with GPG(TODO)
+
+> /proc/sys/kernel/random/entropy_avail
+
+
+### MD5 and SHA checksums
+
+
+> https://github.com/nneonneo/sha1collider
+
+
+
+> shar256sum --check shar256sum.txt
+
+> shar256sum.txt.asc # signed with a GPG/PGP key
+
+
+> centos.org/keys
+
+> gpg -import key
+
+> gpg --verify ascfile.asc
+> shar256sum --check ascfile.asc
+
+> gpg --delete-key  key-fignerprint
+
+
+
+
+
+
+
+
+
+
 
 
 
