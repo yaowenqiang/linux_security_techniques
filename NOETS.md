@@ -186,12 +186,33 @@ enabled = true
 
 > gpg --delete-key  key-fignerprint
 
+### Data Encryption with SSH
 
 
+> /etc/ssh/sshd_config
+
+> Protocol 2
+
+> rm -f /etc/ssh/*key*
+
+> ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+> ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+> ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
+
+> /etc/init.d/ssh restart
+
+> ssh-keyscan server_address >> /root/.ssh/known_hosts.
+
+> ssh-keygen -l # get ssh key figerprint
+
+> /etc/ssh/ssh_config
+> StrictHostKeyChecking on
 
 
-
-
+### Secure tunnel
+1
+> ssh -f user@remote  -L 65023:remote:23 -N
+> telnet localhost 65023
 
 
 
