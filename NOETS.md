@@ -215,6 +215,17 @@ enabled = true
 > telnet localhost 65023
 
 
+## Selinux
+
+> sestatus
+
+> /etc/selinux/semanage.conf
+> /etc/selinux/config
+
+> chcon -Rv --type=context_type /folder
+
+> restore -Rv /folder
+
 
 
 
