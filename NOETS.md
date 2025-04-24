@@ -226,6 +226,36 @@ enabled = true
 
 > restore -Rv /folder
 
+selinux default policy
+
+> /etc/selinux/targeted/contexts/files/file_contexts
+
+> yum install policycoreutils-python
+
+> semanage
+
+> semanage fcontext -s -a https_sys_contextt /website
+
+> semanage fcontext -s -a https_sys_contextt "/website/(/.*)?"
+
+
+> setenforece 0
+
+> grep httpd /var/log/audit/audit.log
+
+> grep httpd /var/log/audit/audit.log | auditallow -m httpd -w 
+> grep httpd /var/log/audit/audit.log | auditallow -M httpd 
+
+> httpd.pe
+> httpd.pp
+
+> semodule -i httpd.pp
+> semodule -l 
+
+
+
+
+
 
 
 
