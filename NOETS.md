@@ -252,8 +252,36 @@ selinux default policy
 > semodule -i httpd.pp
 > semodule -l 
 
+> semanage port -l
+> semanage port -a -t http_port_t -p tcp 8080
 
 
+## chroot jails
+
+
+> useradd service1
+> mkdir  -p /jail/service1
+> cd /jail/service1
+> mkdir  /jail/service1/home/service1
+> mkdir dev etc bin lib64
+
+
+> mknod -m 666 /jail/service1/dev/null c 1 3
+> mknod -m 666 /jail/service1/dev/tty c 5 0
+> mknod -m 666 /jail/service1/dev/zero c 1 5
+> mknod -m 666 /jail/service1/dev/random c 1 8
+
+> echo export PATH=/bin >>/jail/service1/home/servide1/.profile
+> cp /bin/bash /jail/service1/bin/
+> cp /bin/ls /jail/service1/bin/
+> ldd /bin/bash
+> ldd /bin/ls
+
+> vim /etc/ssh/sshd_config
+> match user service1
+>   ChrootDirectory /jail/service1
+
+> systemctl restart sshd
 
 
 
