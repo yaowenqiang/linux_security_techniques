@@ -374,6 +374,32 @@ lxc-destroy -n webserver
 
 
 
+## iptables
+
+> systemctl status iptables
+> systemctl mask firewalld
+
+> yum install iptables-services
+> yum install iptables-persistent # on ubuntu
+> systemctl  enable --now iptables
+
+> iptables --list
+> iptables --list -n
+> iptables --list-rules
+
+> iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+> iptables -A INPUT -p tcp -s ip  --dport 80 -j REJECT
+> iptables-save
+
+> vim /etc/sysconfig/iptables
+
+> iptables -F 
+
+> iptables -vnL
+> iptables -vnL --line
+> watch -n 0.5 iptables -vnL --line
+
+
 
 
 
