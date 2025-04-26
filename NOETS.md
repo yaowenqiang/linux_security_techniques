@@ -283,6 +283,57 @@ selinux default policy
 
 > systemctl restart sshd
 
+## LXC Containers
+
+```bash
+yum install epel-release
+yum install lxc
+yum install lxc-templates
+yum install libvirt
+yum install lxc-extra
+yum install perl
+systemctl enable --now lxc
+systemctl enable --now libvirtd
+
+
+lxc-checkconfig
+
+/usr/share/lxc/templates
+
+git clone https://github.com/lxc/lxc-templates.git
+
+cd lxc-templates
+./autogen
+./configure
+make
+make install
+
+# sudo cp lxc-templates/templates/* /usr/share/lxc/templates/
+
+
+lxc-create -n webserver -t /usr/local/share/lxc/templates/lxc-centos
+
+/var/lib/lxc/
+
+lxc-ls
+lxc-ls  --active
+lxc-info webserver
+lxc-start webserver -d
+
+lxc-consule -n webserver
+lxc-stop -n webserver
+
+shutdown -h now
+
+lxc-destroy -n webserver
+
+
+
+```
+
+
+
+
 
 
 
