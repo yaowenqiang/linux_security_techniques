@@ -332,11 +332,45 @@ lxc-destroy -n webserver
 ```
 
 
+> lxcd
 
 
+## Tcp Wrapper
+
+> ldd /usr/sbin/sshd | rg libwrap
+
+> /etc/hosts.allow apply first
+
+> sshd : ip_to_allow
+> ALL : ip_to_allow
+> sshd : 172.10.0.0/24
+> sshd : 172.10.0.
+> sshd,sftpd : 172.10.0.
+> sshd : 172.10.0.0/255.255.255.0
+> vsftpd : 172.10.0.
+
+> vsftpd : ip : allow
 
 
+# add log to syslog
 
+> vsftpd : ip : allow : severity alert
+
+# run commands
+> vsftpd : ip : allow : spawn /bin/echo A connection was made >> /var/log/vsftp.log
+> vsftpd : ip : allow : spawn /bin/echo A connection from %a %date %h %d %u %c was made >> /var/log/vsftp.log
+
+> vsftpd : ip : deny
+> vsftpd : ip : deny : twist /bin/echo "Your connection has been logged!"
+> ALL : ALL : deny
+
+
+> /etc/hosts.deny
+
+> sshd : ALL
+> ALL : ALL
+> ALL : domain
+> ALL : *.com
 
 
 
