@@ -399,6 +399,30 @@ lxc-destroy -n webserver
 > iptables -vnL --line
 > watch -n 0.5 iptables -vnL --line
 
+## Firewalld
+
+> firewall-cmd --state
+> firewall-cmd --get-zones
+> firewall-cmd --get-active-zones
+> firewall-cmd --get-default-zone
+> firewall-cmd --set-default-zone=internal
+> firewall-cmd --permanent --new-zone=untrusted
+> firewall-cmd --reload
+> firewall-cmd --list-all
+> firewall-cmd --zone=internal --list-all
+> firewall-cmd --get-services
+> firewall-cmd --zone=public --add-service=http
+> firewall-cmd --zone=public --add-service=https
+> firewall-cmd --zone=public --remove-service=dhcpv6-client
+> firewall-cmd --permanent --zone=public --remove-service=dhcpv6-client 
+> firewall-cmd --reload
+> firewall-cmd --zone=public --permanent --add-port=2222/tcp
+> /etc/firewalld/services
+> firewall-cmd --panic-on
+
+
+
+
 
 
 
