@@ -415,12 +415,24 @@ lxc-destroy -n webserver
 > firewall-cmd --zone=public --add-service=https
 > firewall-cmd --zone=public --remove-service=dhcpv6-client
 > firewall-cmd --permanent --zone=public --remove-service=dhcpv6-client 
+
 > firewall-cmd --reload
 > firewall-cmd --zone=public --permanent --add-port=2222/tcp
 > /etc/firewalld/services
 > firewall-cmd --panic-on
 
 
+## Verify firewall configuration
+
+## tcpdump
+
+> tcpdump host 172.17.0.1 -i eth0 
+> tcpdump -i eth0 net 172.17.0.1/16
+> tcpdump -i eth0 src 172.17.0.1
+> tcpdump -i eth0 dst 172.17.0.1
+> tcpdump -i eth0 port 22
+> tcpdump -i eth0 nv(vv)S  -w file1.pcap
+> tcpdump -i eth0 nv(vv)SX  -w file1.pcap
 
 
 
