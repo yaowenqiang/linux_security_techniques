@@ -424,6 +424,20 @@ lxc-destroy -n webserver
 
 ## Verify firewall configuration
 
+> netstat 
+> netstat  -t
+> netstat  -u
+> netstat  -taunp
+> ss 
+> fuser
+
+> firewall-cmd --remove-service telnet --permanent
+
+> apt install zenmap # gui
+
+> nmap -p 1-65535 ip/host
+
+
 ## tcpdump
 
 > tcpdump host 172.17.0.1 -i eth0 
