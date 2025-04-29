@@ -436,6 +436,11 @@ lxc-destroy -n webserver
 > apt install zenmap # gui
 
 > nmap -p 1-65535 ip/host
+> nmap -s T 1-65535 ip/host
+> nmap -s U ip/host
+> nmap -s S  ip # stealth syn
+> nmap -P N  # disable ping probe
+
 
 
 ## tcpdump
@@ -447,6 +452,7 @@ lxc-destroy -n webserver
 > tcpdump -i eth0 port 22
 > tcpdump -i eth0 nv(vv)S  -w file1.pcap
 > tcpdump -i eth0 nv(vv)SX  -w file1.pcap
+
 
 
 
